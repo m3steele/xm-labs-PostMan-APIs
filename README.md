@@ -19,8 +19,8 @@ This repository provides you with a Postman collection that contains all xMatter
 
 # Files
 
-[Download the Postman Collection](xMatters Rest API.postman_collection.json)
-This file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
+[Download the Postman Collection](xMatters Rest API postman_collection.zip)
+After unziping, this file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
 
 **Runner Data Import Example Files**
 * [postman-Groups.csv](postman-Groups.csv) - Example data file to use with Postman Runner (Create Groups) for making a large number of api requests automatically.
@@ -31,6 +31,63 @@ This file can be imported into postman to give you access to all api resources i
 * [postman-Group-Export.csv](postman-Group-Export.csv)
 * [Import Sites.csv](postman-Sites.csv)
 
+# Installation
+
+## Postman Setup
+1. **Download and install Postman from here** (link: https://www.getpostman.com/apps)
+
+2. **Unzip then Import the Postman collection downloaded from the following link**:
+[Download the Postman Collection](xMatters Rest API postman_collection.zip)
+This file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
+
+3. **Add authorization to the xMatters REST API collection.**
+https://www.getpostman.com/docs/v6/postman/sending_api_requests/authorization
+
+      a. Click on the ellipsis (…) next to the collection name (xMatters Rest API), and select “Edit” to open the EDIT COLLECTION modal.
+
+     b. Click the Authorization Tab.
+
+      Add Authentication parameters to authenticate into xMatters. To learn more about authentication for xMatters Rest api go [here]
+    (https://help.xmatters.com/xmAPI/#authentication)
+
+4. **Define [Collection variables]**(https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables#defining-collection-variables)
+Collection variables can be defined by editing the collection details. 
+
+     a. Click on the ellipsis (…) next to the collection name (xMatters Rest API), and select “Edit” to open the EDIT COLLECTION modal. 
+
+     b. Select the Variables tab to edit collection variables.
+
+Below is a list of collection variable, what API's they are used in and sample values
+
+| Variable             | Description          | Example Data         |
+|----------------------|----------------------|----------------------|
+| Host_Name            | xMatters base url. Used in endpoint of all api's   | company.xmatters.com/ |
+| recipient_name       | user name to use when initiating new events | mmcbride |
+| propertyName         | Name of a form property to use when searching events by property | Severity |
+| propertyValue        | Value of form property to search for when searching events using Events API | Sev-2 |
+| list_property_UUID   | UUID of a List form property. Used with the Forms API to update property values | 53a6300-43jf3-d343-d434322ab |
+| hi_property_UUID     | UUID of a Hierarchy form property. Used with the Forms API to update property values | 33a6300-43jf3-d343-d434322ab |
+| groupID              | Group name to use with Groups API | Executives |
+| rest_user_UUID       | The UUID of the xMatters user configured to Authenticate postman API calls. This is the UUID of the user defined in Authorization tab of the collection.  This uuid/user is set as a group supervisor when creating groups. This allows you to also edit a group after it has been created using postman. |5fs98300-43jfs3-d343-d4sdf2ab |
+| personID             | A user ID to be used with the People API. This user does not need to exist in xMatters. The Create person API can create this user for you. | mmcbride | 
+| client_id            | xMatters Client ID used for OAuth Api's. You can get this from Developer > oAuth. | 9304300-43ffjf3-d343-d4sdf34ab |
+| oauth_username       | xMatters userID for the user that will authenticate using oAuth. | rest |
+| oauth_password       | xMatters user password used for the userID provided in oauth_username. | hardtorememberpassword |
+| supervisorID         | xMatters userID for a supervisor that will be created using People Api for Create a person Supervisor | bigboss |
+| web_service_UUID     | The web service UUID of a form that has Access Web Services URL enabled. This is for creating new xMatters events. | 1dsd34300-4asjf3-d363-g23dedd233 |
+| inbound_UUID         | The UUID of an inbound integration for triggering new events in xMatters via an inbound integration. |1dsd34300-4asjf3-d363-g23dedd233 |
+| siteID               | Defines the name of a Site for the Site API. | Default Site |
+| subscriptionformUUID | The UUID of a subscription form. THis is used for the subscription API. | 77sds2d98-s2323-dssa23-ddsd4553cd |
+| profilePropertName   | The name of a custom field that you want to search when using Get people Search API | IT Knowledge |
+| profilePropertValue  | The value of a custom field that you want to search when using Get people Search API | CSS |
+
+Depening on what API's you intend to use not all values above are required. For best results I suggest populating all values.
+
+5. **Have fun and enjoy!**
+
+## xMatters Setup
+Create an xMatters user that can authenticate using REST API.
+(https://help.xmatters.com/xmAPI/#authentication)
 
 # How it works
 Provided in this Postman collection are all xMatters API's available as of May 3 / 2018. 
@@ -252,63 +309,5 @@ Some miscelaneous information.
 
 ### Tests
 All requests, no matter the format, set environment variables in the Tests tab of Postman.
-
-# Installation
-
-## Postman Setup
-1. **Download and install Postman from here** (link: https://www.getpostman.com/apps)
-
-2. **Import the Postman collection downloaded from the following link**:
-[Download the Postman Collection](xMatters Rest API.postman_collection.json)
-This file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
-
-3. **Add authorization to the xMatters REST API collection.**
-https://www.getpostman.com/docs/v6/postman/sending_api_requests/authorization
-
-      a. Click on the ellipsis (…) next to the collection name (xMatters Rest API), and select “Edit” to open the EDIT COLLECTION modal.
-
-     b. Click the Authorization Tab.
-
-      Add Authentication parameters to authenticate into xMatters. To learn more about authentication for xMatters Rest api go [here]
-    (https://help.xmatters.com/xmAPI/#authentication)
-
-4. **Define [Collection variables]**(https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables#defining-collection-variables)
-Collection variables can be defined by editing the collection details. 
-
-     a. Click on the ellipsis (…) next to the collection name (xMatters Rest API), and select “Edit” to open the EDIT COLLECTION modal. 
-
-     b. Select the Variables tab to edit collection variables.
-
-Below is a list of collection variable, what API's they are used in and sample values
-
-| Variable             | Description          | Example Data         |
-|----------------------|----------------------|----------------------|
-| Host_Name            | xMatters base url. Used in endpoint of all api's   | company.xmatters.com/ |
-| recipient_name       | user name to use when initiating new events | mmcbride |
-| propertyName         | Name of a form property to use when searching events by property | Severity |
-| propertyValue        | Value of form property to search for when searching events using Events API | Sev-2 |
-| list_property_UUID   | UUID of a List form property. Used with the Forms API to update property values | 53a6300-43jf3-d343-d434322ab |
-| hi_property_UUID     | UUID of a Hierarchy form property. Used with the Forms API to update property values | 33a6300-43jf3-d343-d434322ab |
-| groupID              | Group name to use with Groups API | Executives |
-| rest_user_UUID       | The UUID of the xMatters user configured to Authenticate postman API calls. This is the UUID of the user defined in Authorization tab of the collection.  This uuid/user is set as a group supervisor when creating groups. This allows you to also edit a group after it has been created using postman. |5fs98300-43jfs3-d343-d4sdf2ab |
-| personID             | A user ID to be used with the People API. This user does not need to exist in xMatters. The Create person API can create this user for you. | mmcbride | 
-| client_id            | xMatters Client ID used for OAuth Api's. You can get this from Developer > oAuth. | 9304300-43ffjf3-d343-d4sdf34ab |
-| oauth_username       | xMatters userID for the user that will authenticate using oAuth. | rest |
-| oauth_password       | xMatters user password used for the userID provided in oauth_username. | hardtorememberpassword |
-| supervisorID         | xMatters userID for a supervisor that will be created using People Api for Create a person Supervisor | bigboss |
-| web_service_UUID     | The web service UUID of a form that has Access Web Services URL enabled. This is for creating new xMatters events. | 1dsd34300-4asjf3-d363-g23dedd233 |
-| inbound_UUID         | The UUID of an inbound integration for triggering new events in xMatters via an inbound integration. |1dsd34300-4asjf3-d363-g23dedd233 |
-| siteID               | Defines the name of a Site for the Site API. | Default Site |
-| subscriptionformUUID | The UUID of a subscription form. THis is used for the subscription API. | 77sds2d98-s2323-dssa23-ddsd4553cd |
-| profilePropertName   | The name of a custom field that you want to search when using Get people Search API | IT Knowledge |
-| profilePropertValue  | The value of a custom field that you want to search when using Get people Search API | CSS |
-
-Depening on what API's you intend to use not all values above are required. For best results I suggest populating all values.
-
-5. **Have fun and enjoy!**
-
-## xMatters Setup
-Create an xMatters user that can authenticate using REST API.
-(https://help.xmatters.com/xmAPI/#authentication)
 
 # xm-labs-PostMan-APIs
