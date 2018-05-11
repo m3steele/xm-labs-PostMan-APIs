@@ -19,7 +19,7 @@ This repository provides you with a Postman collection that contains all xMatter
 
 # Files
 
-[Download the Postman Collection](xMatters Rest API postman_collection.zip)
+[Download the Postman Collection](xMatters-Rest-API.postman_collection.json)
 After unziping, this file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
 
 **Runner Data Import Example Files**
