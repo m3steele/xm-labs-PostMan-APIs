@@ -20,7 +20,7 @@ This repository provides you with a Postman collection that contains all xMatter
 # Files
 
 [Download the Postman Collection](xMatters-Rest-API.postman_collection.json)
-After unziping, this file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
+This file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
 
 **Runner Data Import Example Files**
 * [postman-Groups.csv](postman-Groups.csv) - Example data file to use with Postman Runner (Create Groups) for making a large number of api requests automatically.
@@ -37,7 +37,7 @@ After unziping, this file can be imported into postman to give you access to all
 1. **Download and install Postman from here** (link: https://www.getpostman.com/apps)
 
 2. **Unzip then Import the Postman collection downloaded from the following link**:
-[Download the Postman Collection](xMatters Rest API postman_collection.zip)
+[Download the Postman Collection](xMatters-Rest-API.postman_collection.json)
 This file can be imported into postman to give you access to all api resources in xMatters as of May 3 / 2018.
 
 3. **Add authorization to the xMatters REST API collection.**
