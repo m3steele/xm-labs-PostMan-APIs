@@ -141,6 +141,8 @@ Several Runners have been included that are ready to use:
 - Create User with Devices
 - Create Group with Shifts and Members
 - Create Groups from a Data File
+- Create Shifts from Data File 
+- Add Members to Shift from Data File
 - Add member to group roster from Data File
 - Create Groups From xMaters Group Export using Data File
 - Import Sites from Data File
@@ -155,6 +157,8 @@ This allows you to do things like import a list of groups, add members to a grou
 
 Postman will process each row of data provided and use each column as a variables for the api.
 
+You can easily create your own runners along with your own custom data.
+
 ## Runner Explainations:
 
 ### Create User with Devices
@@ -165,6 +169,8 @@ This runner will create a user along with devices from Collection Variables:
   - *Create a person Supervisor* (Creates a person supervisor. This user will be the supervisor for the person created in the next step.)
   - *Create a person* (Creates a person.)
   - *Create a device* (Adds a device to the person created in the last step. Add additional Create device Api calls to add more than one device and specify sequence and delays between then.)
+
+
 
 
 ### Create User with Devices
@@ -187,11 +193,11 @@ This runner will Add Multiple Groups from a csv data file.
 The following data format would create 3 new groups in xMatters and set a specific user supervisor to each group.
 
 
-|  Group Name     |	supervisorUUID                       |
-|-----------------|--------------------------------------|
-| DBA Team       	| 374551cb-76f9-41c7-bffc-723d9b6b6e34 |
-| Network Admin	  | 374551cb-76f9-41c7-bffc-723d9b6b6e34 | 
-| CCV Daily SYnc	| 374551cb-76f9-41c7-bffc-723d9b6b6e34 |
+|  Group Name     |	Group Description                    |	supervisorUUID                      |
+|-----------------|--------------------------------------|--------------------------------------|
+| DBA Team       	| A Team for opening new tickets       | 374551cb-76f9-41c7-bffc-723d9b6b6e34 |
+| Network Admin	  | A team of slackers                   | 374551cb-76f9-41c7-bffc-723d9b6b6e34 |
+| CCV Daily SYnc	|                                      | 374551cb-76f9-41c7-bffc-723d9b6b6e34 |
 
 
 
@@ -201,7 +207,9 @@ The following data format would create 3 new groups in xMatters and set a specif
 - This runner is best ran after the *Create Groups from Data File* Runner above.
 - This runner can be used to add all of the shifts to the groups added in the previous runner.
 - Atttempts to add shifts to groups that are not yet in xMatters will fail.
-- This is a very complicated datafile and the headings will mean very little to you.
+- This is a very complicated datafile and the headings will mean very little to you without reading xMatters Documents.
+- Not all columns are needed for each type of shift.
+- The sample files comes with 24 shifts types and sample data for each of them. Blank values mean it's not needed for the particular shift type.
 
 Please read the xMatters API documentation for Shift Object to understand what values can be put in this file.
 [Shift Object] (https://help.xmatters.com/xmAPI/?javascript#shift-objects)
@@ -210,9 +218,11 @@ Please read the xMatters API documentation for Shift Object to understand what v
 
 Add new lines one for each shift you want to add. You can have mutiple shifts per group and you can add shifts to more than one group at a time.
 
-| Group Name | Shift Name             | Shift Description       | Start Time               | End Time                 | Frequency | On          |	Months                   | End By | DayofWeek Clarifyer | DayofWeek | 
-|------------|------------------------|-------------------------|--------------------------|--------------------------|-----------|-------------|--------------------------|--------|---------------------|-----------| 
-| Open Desk  | Quarterly Monday Stock | Shift to cover...       |	2018-03-05T13:00:00.000Z | 2018-03-05T22:00:00.000Z	| MONTHLY	  | DAY_OF_WEEK |	MAR", "JUN", "SEP", "DEC | NEVER |	FIRST               |	MO        |
+
+| Group Name |	Shift Name	          | Shift Description	      | start                 	 | end                  	  | frequency |	endBy   	  |	date  	  |	repetitions	| repeatEvery |	onDays    |	on	         | Months               	   | dayOfWeekClassifier |	dayOfWeek	    |dateOfMonth |
+|------------|------------------------|-------------------------|--------------------------|--------------------------|-----------|-------------|-----------|-------------|-------------|-----------|--------------|---------------------------|---------------------|----------------|------------|
+| Open Desk  | MONTHLY ENDBY: NEVER   | Shift to cover first..  |	2018-03-05T13:00:00.000Z | 2018-03-05T22:00:00.000Z	| MONTHLY	  | NEVER       |           |	            |             |           | DAY_OF_WEEK  | MAR", "JUN", "SEP", "DEC  |	FIRST              |	MO            |            |
+
 
 
 
@@ -254,19 +264,6 @@ Add new lines one for each shift you want to add. You can have mutiple shifts pe
 | CCV Daily SYnc	| kbundy       |
 
 
-### Add members to Group Roster from Data File
-- This runner will Add members to the Group Roster. 
-- Group Roster are people in the group but not on any shift.
-- If you would like to add people to a shift you will need to use a different runner.
-
-
-**Data File Format**: [Add members to Group Roster](postman-Sites.csv)
-
-
-| Site Name    | Status	      | Language     | Time Zone    |	Address 1    | Address 2    |	City         | State        | Country       | Zip          | Latitude     | Longitude    |
-|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|---------------|--------------|--------------|--------------|
-| Calgary      | Active	      | English      | US/Pacific   |	10 Avenue SE |              |	Calgary      | AB           | Canada        | T2G 0W2      | 51.0416473   | -114.0383162 |
-| Texas        | Active	      | English      | US/Easters   |	6 Ashley Dr  |              |	Tyler        | TX           | United States | 75703        | 32.2556612   | -95.3207069  |
 
 ### Create Groups From xMatters Group Export Using Data File
 - This runner will use the xMatters Group Export csv file as a Data File input to add groups and members to xMatters. 
@@ -287,17 +284,22 @@ Depending on the order of your group export file, it may work for some nested gr
 This will depend if the group was alread greated before attempting to add the group as a member.
 
 
+
 ### Import Sites from Data File
 This runner will import a list of sites containied in a datafile.
 
 **Data File Format**: [Import Sites](postman-Sites.csv)
 
 
-| Site Name	 |  Status	 |  Language	 |  Time Zone	 |  Address 1	 |  Address 2	 |  City	 |  State	 |  Country	 |  Zip	  |  Latitude	 |  Longitude	   |
-|------------|-----------|-------------|-------------|-------------|-------------|---------|---------|-----------|--------|-------------|--------------|
-| Calgary    | Active    | English     |  US/Pacific | 123 Street  |             | Calgary | AB      | Canada    | T2G0W2 | 51.0416473  |	-114.0383162 |
+| Site Name    | Status	      | Language     | Time Zone    |	Address 1    | Address 2    |	City         | State        | Country       | Zip          | Latitude     | Longitude    |
+|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|---------------|--------------|--------------|--------------|
+| Calgary      | Active	      | English      | US/Pacific   |	10 Avenue SE |              |	Calgary      | AB           | Canada        | T2G 0W2      | 51.0416473   | -114.0383162 |
+| Texas        | Active	      | English      | US/Easters   |	6 Ashley Dr  |              |	Tyler        | TX           | United States | 75703        | 32.2556612   | -95.3207069  |
 
-You can easily create your own runners along with your own custom data.
+
+
+
+
 
 ## Misc
 Some miscelaneous information.
@@ -307,3 +309,10 @@ Some miscelaneous information.
 
 ### Tests
 All requests, no matter the format, set environment variables in the Tests tab of Postman.
+
+### Typical Dat FIle Error
+When editing a data file with Excel you must save the file as a csv.  Excel sometimes formats this poorly and adds an extra line at the end.
+This will result in the last item in your data file failing.
+Usually you will see a /r at the end of your last data parameter. This indicates this problem.
+
+To resolve this just open the csv file in a text editor and remove the last blank line and save.
