@@ -1,4 +1,5 @@
-Group Name,supervisorUUID
-Open Desk,374551cb-76f9-41c7-bffc-723d9b6b6e34
-Slacker,374551cb-76f9-41c7-bffc-723d9b6b6e34
-Jira,374551cb-76f9-41c7-bffc-723d9b6b6e34
+Group Name,Group Description,supervisorUUID
+Open Desk,Team for opening new tickets,374551cb-76f9-41c7-bffc-723d9b6b6e34
+Slacker,A team of slackers,374551cb-76f9-41c7-bffc-723d9b6b6e34
+Jira,,374551cb-76f9-41c7-bffc-723d9b6b6e34
+DevOps,dev team,374551cb-76f9-41c7-bffc-723d9b6b6e34
