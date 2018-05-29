@@ -24,7 +24,7 @@ This repository provides you with a Postman collection that contains all xMatter
 **Runner Data Import Example Files**
 * [postman-Groups.csv](postman-Groups.csv) - Example data file to use with Postman Runner (Create Groups) for making a large number of api requests automatically.
 * [postman-Shifts.csv](postman-Shifts.csv)
-* [postman-Members.csv](postman-Members.csv)  - Example data file to use with Postman Runner(Add members to group) for making a large number of api requests automatically.
+* [postman-Members-Shifts.csv](postman-Members-Shifts.csv)  - Example data file to use with Postman Runner(Add members to group) for making a large number of api requests automatically.
 * [postman-Members-Roster.csv](postman-Members-Roster.csv)
 * [postman-Sites.csv](postman-Sites.csv)
 * [postman-Group-Export.csv](postman-Group-Export.csv)
@@ -45,10 +45,9 @@ https://www.getpostman.com/docs/v6/postman/sending_api_requests/authorization
 
      b. Click the Authorization Tab.
 
-      Add Authentication parameters to authenticate into xMatters. To learn more about authentication for xMatters Rest api go [here]
-    (https://help.xmatters.com/xmAPI/#authentication)
+      Add Authentication parameters to authenticate into xMatters. To learn more about authentication for xMatters Rest api go [here](https://help.xmatters.com/xmAPI/#authentication)
 
-4. **Define [Collection variables]**(https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables#defining-collection-variables)
+4. **Define [Collection variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables#defining-collection-variables)**
 Collection variables can be defined by editing the collection details. 
 
      a. Click on the ellipsis (…) next to the collection name (xMatters Rest API), and select “Edit” to open the EDIT COLLECTION modal. 
