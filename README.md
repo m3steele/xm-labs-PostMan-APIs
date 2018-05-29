@@ -24,7 +24,7 @@ This repository provides you with a Postman collection that contains all xMatter
 **Runner Data Import Example Files**
 * [postman-Groups.csv](postman-Groups.csv) - Example data file to use with Postman Runner (Create Groups) for making a large number of api requests automatically.
 * [postman-Shifts.csv](postman-Shifts.csv)
-* [postman-Members-Shifts.csv](postman-Members-Shifts.csv)  - Example data file to use with Postman Runner(Add members to group) for making a large number of api requests automatically.
+* [postman-Members-Shifts.csv](postman-Members-Shifts.csv) - Example data file to use with Postman Runner(Add members to group) for making a large number of api requests automatically.
 * [postman-Members-Roster.csv](postman-Members-Roster.csv)
 * [postman-Sites.csv](postman-Sites.csv)
 * [postman-Group-Export.csv](postman-Group-Export.csv)
