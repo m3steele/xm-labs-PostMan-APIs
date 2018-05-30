@@ -204,18 +204,18 @@ This runner will create a group, shifts and members from Collection Variables.
 
 
 
-###The Next 4 Runners are designed to use together one after another:
+### The Next 4 Runners are designed to use together one after another:
 
 Before using these runners please ensure users have been added to xMatters. If users do not exist these will fail.
 
 1. Create Groups from Data file
 2. Add Shifts from Data File
 
-    3. Add Members to Shift from Data File
+    - Add Members to Shift from Data File
 
-      or (Use 3 or 4 depending on what you want to do.)
+          or (Use 3 or 4 depending on what you want to do.)
 
-    4. Add Members to Group Roster from Data File
+    - Add Members to Group Roster from Data File
 
 
 
@@ -350,7 +350,7 @@ This runner will import a list of sites contained in a data file.
 Some miscellaneous information.
 
 ### Variables
-{{value}} indicates a reference to a collection or environment variable in Postman be careful when changing these. It is advised to change the variable value not the reference. You can only set Collection Variables as instructed [here](https://www.getpostman.com/docs/v6/postman/collections/data_formats#exporting-and-importing-postman-data)
+{{value}} indicates a reference to a collection or environment variable in Postman be careful when changing these. It is advised to change the variable value not the reference. You can only set Collection Variables as instructed [here](https://www.getpostman.com/docs/v6/postman/collections/data_formats#exporting-and-importing-postman-data).
 
 Environment variables need to be set from the Pre-Request or Test section of Postman.
 
