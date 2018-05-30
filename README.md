@@ -213,7 +213,7 @@ Before using these runners please ensure users have been added to xMatters. If u
 
     - Add Members to Shift from Data File
 
-          or (Use 3 or 4 depending on what you want to do.)
+        _Add members to Shift (Above) OR Add Members to Rorster (Below) depending on what you want to do._
 
     - Add Members to Group Roster from Data File
 
