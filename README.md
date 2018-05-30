@@ -1,11 +1,11 @@
 # xMatters REST API's for Postman
-This repository provides you with a Postman collection that contains all xMatters Rest API end points as of May 3 / 2018. It also includes Postman Runners that allow you to chain API requests togeter to do cool things.
+This repository provides you with a Postman collection that contains all xMatters Rest API end points as of May 3 / 2018. It also includes Postman Runners that allow you to chain API requests together to do cool things.
 
 * 176 xMatters API requests.
-* JavaScript and JSON payloads for each api.
+* JavaScript and JSON payloads for each API.
 * Runner Collections to automate processes that require multiple API request.
-* Build your own custom Runners to string together multiple api requests.
-* Automatically adds Postman environment variables with returned results from api requests. This allows you to chain multiple API's together without needing to manually move UUID's from one request to the next.
+* Build your own custom Runners to string together multiple API requests.
+* Automatically adds Postman environment variables with returned results from API requests. This allows you to chain multiple API's together without needing to manually move UUID's from one request to the next.
 * Make multiple API requests using postman Runners to import large datasets into xMatters from a csv files.
 * Use the xMatters API without being an API expert.
 
@@ -27,8 +27,8 @@ This repository provides you with a Postman collection that contains all xMatter
 * [postman-Groups.csv](postman-Groups.csv) - Use with "Create Groups from Data File" runner. Adds a list of Groups to xMatters.
 * [postman-Shifts.csv](postman-Shifts.csv) - Use with "Create Shifts from Data File" runner. Adds a list of Shifts to existing xMatters Groups.
 * [postman-Members-Shifts.csv](postman-Members-Shifts.csv) - Use with "Add Members to Shifts from Data File" runner. Adds a list of existing users to existing xMatters Shifts.
-* [postman-Members-Roster.csv](postman-Members-Roster.csv) - Use with "Add Members to Group Roster from Data File" runner. Adds a list of esisting users to existing xMatters Groups as a member of the roster but not part of a shift.
-* [postman-Group-Export.csv](postman-Group-Export.csv) - Use with "Create Groups From xMatter Group Export using Data File" runner. Adds Groups, Shifts and Members to xMatters using the Group Export file. Users must already be in xMatters. All information in the Group Export is used but the group export does not contain all shift information that may exist in xMatters for a particular group.
+* [postman-Members-Roster.csv](postman-Members-Roster.csv) - Use with "Add Members to Group Roster from Data File" runner. Adds a list of existing users to existing xMatters Groups as a member of the roster but not part of a shift.
+* [postman-Group-Export.csv](postman-Group-Export.csv) - Use with "Create Groups From xMatters Group Export using Data File" runner. Adds Groups, Shifts and Members to xMatters using the Group Export file. Users must already be in xMatters. All information in the Group Export is used but the group export does not contain all shift information that may exist in xMatters for a particular group.
 * [postman-Sites.csv](postman-Sites.csv) - Use with "Import Sites from Data File" runner. Adds a list of sites to xMatters.
 
 # Installation
@@ -48,7 +48,7 @@ This repository provides you with a Postman collection that contains all xMatter
 
      b. Click the Authorization Tab.
 
-      Add Authentication parameters to authenticate into xMatters. To learn more about authentication for xMatters Rest api go [here](https://help.xmatters.com/xmAPI/#authentication)
+      Add Authentication parameters to authenticate into xMatters. To learn more about authentication for xMatters Rest API go [here](https://help.xmatters.com/xmAPI/#authentication)
 
 6. **Define [Collection Variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables#defining-collection-variables)**
 Collection variables can be defined by editing the collection details. 
@@ -61,7 +61,7 @@ Below is a list of collection variable, what API's they are used in and sample v
 
 | Variable             | Description          | Example Data         |
 |----------------------|----------------------|----------------------|
-| Host_Name            | xMatters base url. Used in endpoint of all api's.   | company.xmatters.com/ |
+| Host_Name            | xMatters base url. Used in endpoint of all API's.   | company.xmatters.com/ |
 | recipient_name       | user name to use when initiating new events. | mmcbride |
 | propertyName         | Name of a form property to use when searching events by property. | Severity |
 | propertyValue        | Value of form property to search for when searching events using Events API. | Sev-2 |
@@ -70,10 +70,10 @@ Below is a list of collection variable, what API's they are used in and sample v
 | groupID              | Group name to use with Groups API. | Executives |
 | rest_user_UUID       | The UUID of the xMatters user configured to Authenticate postman API calls. This is the UUID of the user defined in Authorization tab of the collection.  This uuid/user is set as a group supervisor when creating groups. This allows you to also edit a group after it has been created using postman. |5fs98300-43jfs3-d343-d4sdf2ab |
 | personID             | A user ID to be used with the People API. This user does not need to exist in xMatters. The Create person API can create this user for you. | mmcbride | 
-| client_id            | xMatters Client ID used for OAuth Api's. You can get this from Developer > oAuth. | 9304300-43ffjf3-d343-d4sdf34ab |
+| client_id            | xMatters Client ID used for OAuth API's. You can get this from Developer > oAuth. | 9304300-43ffjf3-d343-d4sdf34ab |
 | oauth_username       | xMatters userID for the user that will authenticate using oAuth. | rest |
 | oauth_password       | xMatters user password used for the userID provided in oauth_username. | hardtorememberpassword |
-| supervisorID         | xMatters userID for a supervisor that will be created using People Api for Create a person Supervisor. | bigboss |
+| supervisorID         | xMatters userID for a supervisor that will be created using People API for Create a person Supervisor. | bigboss |
 | web_service_UUID     | The web service UUID of a form that has Access Web Services URL enabled. This is for creating new xMatters events. | 1dsd34300-4asjf3-d363-g23dedd233 |
 | inbound_UUID         | The UUID of an inbound integration for triggering new events in xMatters via an inbound integration. |1dsd34300-4asjf3-d363-g23dedd233 |
 | siteID               | Defines the name of a Site for the Site API. | Default Site |
@@ -90,11 +90,11 @@ Create an xMatters user that can authenticate using REST API.
 (https://help.xmatters.com/xmAPI/#authentication)
 
 # How it works
-Provided in this Postman collection are all xMatters API's available as of May 3 / 2018. It also includes Postman Runners that allow you to chain API requests togeter to do cool things.
+Provided in this Postman collection are all xMatters API's available as of May 3 / 2018. It also includes Postman Runners that allow you to chain API requests together to do cool things.
 
-To use this, update the collection variables as explained above to your specific use case.  Once the variables are set, all apis will work together.
+To use this, update the collection variables as explained above to your specific use case.  Once the variables are set, all APIs will work together.
 
-Each api call made in postman will save an environment variable related to the api just used. This will allow you to make subsequent api calls that use the results of the previous api.
+Each API call made in postman will save an environment variable related to the API just used. This will allow you to make subsequent API calls that use the results of the previous API.
 
 This means you can do things like the following:
 
@@ -113,12 +113,12 @@ This means you can do things like the following:
 | 10. Create a new Group               | groupID                   |                           | groupUUID                    | 
 
 
-* All Api Call are available is JavaScript and JSON format.
+* All API Call are available is JavaScript and JSON format.
 
 ## JavaScript Format
 JavaScript format uses Postman Pre-Request Scripts to build a json object and save it into a Postman environment variable {{data}}. This gets posted as raw body in application/json format.
 
-The JavaScript formatted request allow you to add your own code and customize the api as required.
+The JavaScript formatted request allow you to add your own code and customize the API as required.
 
 The last couple lines of Postman Pre-Request Scripts use Postman functions to set environment variables and log the payload that is used in the post body.
 
@@ -132,7 +132,7 @@ pm.environment.set("data", JSON.stringify(data));
 console.log("Data",JSON.strinify(data))
 ```
 
-Many of the API's will also use Postman Tests to save part of the response into an environment variable for easy api chaining. Typically this will save the UUID.
+Many of the API's will also use Postman Tests to save part of the response into an environment variable for easy API chaining. Typically this will save the UUID.
 
 *Example:*
 ```
@@ -144,7 +144,7 @@ postman.setEnvironmentVariable('deviceUUID', jsonData.id);
 
 
 ## Json Format
-JSON formatted request are provided in raw body application/Json format and do not allow any JavaScript. If you want to customize this format you will need to change the json body directly. No JavaScript logic can be used for this format.
+JSON formatted request are provided in raw body application/json format and do not allow any JavaScript. If you want to customize this format you will need to change the json body directly. No JavaScript logic can be used for this format.
 
 
 
@@ -168,11 +168,11 @@ Several Runners have been included that are ready to use:
 You can access Runners by Clicking the **Runner** button in top left corner of Postman.
 [Runner Help](https://www.getpostman.com/docs/v6/postman/collection_runs/starting_a_collection_run)
 
-Some runners require a csv data file. Postman will run through the api's in the selected runner once for each row of provided data.
+Some runners require a csv data file. Postman will run through the API's in the selected runner once for each row of provided data.
 
 This allows you to import a list of groups, add members to a group or import sites from postman.
 
-Postman will process each row of data provided and use each column as variables for the api.
+Postman will process each row of data provided and use each column as variables for the API.
 
 You can easily create your own runners along with your own custom data.
 
@@ -182,10 +182,10 @@ You can easily create your own runners along with your own custom data.
 This runner will create a user along with devices from Collection Variables. It does not use a csv data file.
 
 **Steps:**
-  - *Get a Site* (Gets the UUID of the site specified in the api call that a person will be added to.)
+  - *Get a Site* (Gets the UUID of the site specified in the API call that a person will be added to.)
   - *Create a person Supervisor* (Creates a person supervisor. This user will be the supervisor for the person created in the next step.)
   - *Create a person* (Creates a person.)
-  - *Create a device* (Adds a device to the person created in the last step. Add additional Create device api calls to add more than one device and specify sequence and delays between then.)
+  - *Create a device* (Adds a device to the person created in the last step. Add additional Create device API calls to add more than one device and specify sequence and delays between then.)
 
 
 
@@ -303,7 +303,7 @@ Add new lines one for each shift you want to add. You can have multiple shifts p
 
 ### Create Groups From xMatters Group Export Using Data File
 - This runner will use the xMatters Group Export csv file as a Data File input to add groups and members to xMatters. 
-- The use case here would be to export groups from Non-Production environement and use this runner to import groups into Production.
+- The use case here would be to export groups from Non-Production environment and use this runner to import groups into Production.
 - Export this file from your xMatters environment as follows: Login to xMatters > Groups > Export Groups (Button on far right)
 
 [Export Groups From xMatters](https://help.xmatters.com/OnDemand/groups/groups-create-delete-export.htm)
@@ -327,7 +327,7 @@ This runner will import a list of sites contained in a data file.
 **Data File Format**: [Import Sites](postman-Sites.csv)
 
 **Requirements**
-- Language must be enabled to create a site in a particular language.
+- Language must be enabled to create a site with a particular language.
 - Time Zone must be enabled in Admin > Time Zones. Proper format is just the name and does not include the UTC time. Ex: US/Mountain
 - Country must be enabled in Admin > Countries. Proper format is exact name listed in selected country. 
 - Include Latitude and Longitude if you want the site to automatically be Geocoded.
@@ -344,7 +344,7 @@ This runner will import a list of sites contained in a data file.
 
 
 
-## Misc
+## Misccellaneous
 Some miscellaneous information.
 
 ### Variables
