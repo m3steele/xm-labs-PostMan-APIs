@@ -204,16 +204,18 @@ This runner will create a group, shifts and members from Collection Variables.
 
 
 
-###The Next 4 Runners are designed to use together one after another:###
+###The Next 4 Runners are designed to use together one after another:
 
 Before using these runners please ensure users have been added to xMatters. If users do not exist these will fail.
 
 1. Create Groups from Data file
 2. Add Shifts from Data File
 
-  3. Add Members to Shift from Data File
-    or (Use 3 or 4 depending on what you want to do.)
-  4. Add Members to Group Roster from Data File
+    3. Add Members to Shift from Data File
+
+      or (Use 3 or 4 depending on what you want to do.)
+
+    4. Add Members to Group Roster from Data File
 
 
 
