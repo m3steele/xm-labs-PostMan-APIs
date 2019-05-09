@@ -1,0 +1,5 @@
+personID,First Name, Last Name, supervisorUUID, siteUUID, Role, Email
+tlannister,Tyrion,Lannister,36c5b2e9-4bd3-47a5-996a-ac2e2bd8f113,e09453c2-fa86-4a0e-93a1-0bac1a0f07d1,Standard User,tyrion@lannisters.com
+clannister,Cersei,Lannister,36c5b2e9-4bd3-47a5-996a-ac2e2bd8f113,e09453c2-fa86-4a0e-93a1-0bac1a0f07d1,Standard User,cersei@lannisters.com
+sstark,Sansa,Stark,36c5b2e9-4bd3-47a5-996a-ac2e2bd8f113,e09453c2-fa86-4a0e-93a1-0bac1a0f07d1,Standard User,sansa@starks.com
+astark,A,Girl,36c5b2e9-4bd3-47a5-996a-ac2e2bd8f113,e09453c2-fa86-4a0e-93a1-0bac1a0f07d1,Standard User,arya@starks.com

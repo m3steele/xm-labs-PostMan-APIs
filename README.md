@@ -1,7 +1,7 @@
 # xMatters REST API's for Postman
-This repository provides you with a Postman collection that contains all xMatters Rest API end points as of May 3 / 2018. It also includes Postman Runners that allow you to chain API requests together to do cool things.
+This repository provides you with a Postman collection that contains all xMatters Rest API end points as of May 9 / 2019. It also includes Postman Runners that allow you to chain API requests together to do cool things.
 
-* 176 xMatters API requests.
+* 299 xMatters API requests.
 * JavaScript and JSON payloads for each API.
 * Runner Collections to automate processes that require multiple API request.
 * Build your own custom Runners to string together multiple API requests.
@@ -213,7 +213,7 @@ Before using these runners please ensure users have been added to xMatters. If u
 
     - Add Members to Shift from Data File
 
-        _Add members to Shift (Above) OR Add Members to Rorster (Below) depending on what you want to do._
+          _Add members to Shift (Above) OR Add Members to Roster (Below) depending on what you want to do._
 
     - Add Members to Group Roster from Data File
 
