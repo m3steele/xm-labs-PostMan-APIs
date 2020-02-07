@@ -1,7 +1,7 @@
 # xMatters REST API's for Postman
-This repository provides you with a Postman collection that contains all xMatters Rest API end points as of May 9 / 2019. It also includes Postman Runners that allow you to chain API requests together to do cool things.
+This repository provides you with a Postman collection that contains all xMatters Rest API end points as of Feb 17 / 2020. It also includes Postman Runners that allow you to chain API requests together to do cool things.
 
-* 299 xMatters API requests.
+* 358 xMatters API requests.
 * JavaScript and JSON payloads for each API.
 * Runner Collections to automate processes that require multiple API request.
 * Build your own custom Runners to string together multiple API requests.
@@ -12,6 +12,35 @@ This repository provides you with a Postman collection that contains all xMatter
 <kbd>
   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
 </kbd>
+
+
+
+# Updates
+* Feb 17 / 2020 Made the following changes
+
+    - Updated descriptions across numerous endpoints
+    - Get Historical Audits
+    - Renamed Data Import to match recent changes for Import Jobs
+    - Added Dynamic Teams Endpoints
+    - Events: Get User Delivery Data
+    - Events: Add comment to an event
+    - Event Suppressions: Get Suppressed events
+    - Forms: Get forms sections
+    - Groups: Get Groups by Search
+    - Groups: Get Groups by Site
+    - Plans: Updated Plans endpoints, added create, modify and delete communicaiton plan
+    - Plan Constants: Added CRUD endpoints to Plan Constants
+    - Plan Endpoints: Added CRUD endpoints to Plan Endpoints
+    - Plan Properties: Added CRUD endpoints to Plan Properties
+    - Scenarios: Added Modify and Delete Scenarios endpoints
+    - Shared library: Added Delete a Shared library endpoint
+    - Site: Added Delete a Site endpoint
+    - Subscriptions: Added Get Subscribers endpoint
+    - Upload Users: Added Upload an EPIC ZipSync file
+    - Additional misc updates and bug fixes.
+
+
+
 
 # Pre-Requisites
 * [Postman](https://www.getpostman.com)
